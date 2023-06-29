@@ -48,16 +48,16 @@ log_msg="connection on $interface ${subcommand}ed via $0"
 
 case "$subcommand" in
   "connect")
-    eval "$ifconfig_command" "$interface" up
+    eval "$ifconfig_command" "$interface" up || return $?
     eval "$log_command" "\"$log_msg\""
     ;;
   "disconnect")
-    eval "$ifconfig_command" "$interface" down
+    eval "$ifconfig_command" "$interface" || return $?
     eval "$log_command" "\"$log_msg\""
     ;;
   "reconnect")
-    eval "$ifconfig_command" "$interface" down
-    eval "$ifconfig_command" "$interface" up
+    eval "$ifconfig_command" "$interface" down && \
+    eval "$ifconfig_command" "$interface" up || return $?
     eval "$log_command" "\"$log_msg\""
     ;;
   "autoconnect")
@@ -69,8 +69,8 @@ case "$subcommand" in
       head -n 1)
     #printf "\`%s\`-ing gateway %s\n" "$ping_command" "$gateway" >&2
     if ! eval "$ping_command" -q -c10 "$gateway" > /dev/null 2>&1; then
-      eval "$ifconfig_command" "$interface" down
-      eval "$ifconfig_command" "$interface" up
+      eval "$ifconfig_command" "$interface" down &&
+      eval "$ifconfig_command" "$interface" up || return $?
       eval "$log_command" "\"$log_msg\""
     fi
     ;;
