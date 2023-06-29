@@ -7,6 +7,6 @@ Main use case: Automatically reconnect `wlan0` Wi-Fi interface on a Raspberry Pi
 when connection has stopped working, as it tends to do at times.
 
 For futher details, see the usage message in the actual
-link:./ifconn.sh[script file] (more easily viewed by running `ifconn.sh
+link:./ifconn.sh[script file] (more easily viewed by running `./ifconn.sh
 --help`).
 
