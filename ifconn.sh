@@ -4,7 +4,7 @@ ifconfig_command="/sbin/ifconfig"
 ip_command="/usr/bin/ip"
 ping_command="/bin/ping"
 log_command="/usr/bin/logger"
-log_command="printf \"%s\\n\""
+#log_command="printf \"%s\\n\""
 
 interface="wlan0"
 
