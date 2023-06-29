@@ -1,10 +1,10 @@
 = `ifconn.sh`
 Lasse Schlör
 
-Easy Wi-Fi control for Raspberry Pi.
+Simple network interface control shell script.
 
-Main use case: Automatically reconnect `wlan0` interface when connection has
-stopped working, as it tends to do at times.
+Main use case: Automatically reconnect `wlan0` Wi-Fi interface on a Raspberry Pi
+when connection has stopped working, as it tends to do at times.
 
 For futher details, see the usage message in the actual
 link:./ifconn.sh[script file] (more easily viewed by running `ifconn.sh
