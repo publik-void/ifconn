@@ -21,7 +21,7 @@ Usage:
 
 \`connect\`/\`disconnect\` map to \`$ifconfig_command <interface> <up/down>\`, \
 respectively.
-\`reconnect\` issues a \`connect\` and then a \`disconnect\`.
+\`reconnect\` issues a \`disconnect\` and then a \`connect\`.
 \`autoconnect\` issues a \`reconnect\` iff the local gateway is not reachable.
 
 The script makes use of \`$log_command\` for logging.
